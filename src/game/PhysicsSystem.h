@@ -23,8 +23,14 @@ public:
 
 	void Update(WvWorld& sWorld, float fStep);
 
+	// Zero takes one step per frame, however long the frame: the naive
+	// variable-step integration the frame-rate probe compares against.
+	void SetMaxSubstep(float fMaxSubstep);
+
 private:
 	static void StepPlayer(WvWorld& sWorld, uint32_t udwPlayer, float fStep);
+
+	float m_fMaxSubstep = PHYSICS_MAX_SUBSTEP;
 };
 
 } // namespace weev

@@ -3,6 +3,7 @@
 #include "core/Params.h"
 #include "input/Input.h"
 #include "render/Renderer.h"
+#include "test/FrameRateProbe.h"
 #include "test/InputTest.h"
 #include "window/Window.h"
 
@@ -31,6 +32,12 @@ int WvApp::Run(const int nArgCount, char** const ppszArgs)
 	if (WvParams::Has("test"))
 	{
 		return WvInputTest::Run() ? 0 : 1;
+	}
+
+	if (WvParams::Has("probe_frame_rate"))
+	{
+		WvFrameRateProbe::Run();
+		return 0;
 	}
 
 	static WvApp s_oApp;

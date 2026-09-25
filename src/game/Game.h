@@ -30,6 +30,8 @@ public:
 	// whose outcome differs.
 	uint64_t GetStateHash() const;
 
+	void SetPhysicsMaxSubstep(float fMaxSubstep);
+
 	const WvWorld& GetWorld() const;
 
 private:

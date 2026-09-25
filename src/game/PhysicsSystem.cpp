@@ -28,13 +28,13 @@ void WvPhysicsSystem::Update(WvWorld& sWorld, const float fStep)
 			sWorld.m_udwJumpCount[i]++;
 		}
 
+		const float fMaxSubstep = m_fMaxSubstep > 0.0f ? m_fMaxSubstep : fStep;
 		float fRemaining = fStep;
 
 		while (fRemaining > 0.0f)
 		{
-			const float fSubstep = fRemaining < PHYSICS_MAX_SUBSTEP
-									 ? fRemaining
-									 : PHYSICS_MAX_SUBSTEP;
+			const float fSubstep = fRemaining < fMaxSubstep ? fRemaining
+															: fMaxSubstep;
 			StepPlayer(sWorld, i, fSubstep);
 			fRemaining -= fSubstep;
 		}
@@ -113,6 +113,11 @@ void WvPhysicsSystem::StepPlayer(
 		sWorld.m_afPositionX[i] = PHYSICS_WALL_X;
 		sWorld.m_afVelocityX[i] = 0.0f;
 	}
+}
+
+void WvPhysicsSystem::SetMaxSubstep(const float fMaxSubstep)
+{
+	m_fMaxSubstep = fMaxSubstep;
 }
 
 } // namespace weev

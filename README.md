@@ -20,6 +20,7 @@ checkout lives elsewhere.
 | Flag | Does |
 |------|------|
 | `--test` | run the input self-tests and exit |
+| `--probe_frame_rate` | play one input script at 30 to 240 Hz and with jitter, and compare the jumps |
 | `--agent` | a scripted agent plays player 2 through `PushAtFrame` |
 | `--fixed_dt[=us]` | every frame advances by a constant step (16667 us) |
 | `--frames=N` | quit after N frames |

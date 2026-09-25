@@ -26,6 +26,7 @@ add_executable(bc_input_test
 	src/input/InputQueue.cpp
 	src/input/InputRecording.cpp
 	src/render/Renderer_Win.cpp
+	src/test/FrameRateProbe.cpp
 	src/test/InputTest.cpp
 	src/timer/Timer.cpp
 	src/window/Window_Win.cpp

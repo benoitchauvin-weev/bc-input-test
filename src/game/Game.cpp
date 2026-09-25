@@ -65,6 +65,11 @@ uint64_t WvGame::GetStateHash() const
 	return uqwHash;
 }
 
+void WvGame::SetPhysicsMaxSubstep(const float fMaxSubstep)
+{
+	m_oPhysics.SetMaxSubstep(fMaxSubstep);
+}
+
 const WvWorld& WvGame::GetWorld() const
 {
 	return m_sWorld;

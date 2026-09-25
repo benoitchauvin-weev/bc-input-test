@@ -12,6 +12,7 @@
 //
 // Parameters:
 //   --test              run the input self-tests and exit
+//   --probe_frame_rate  compare jumps across frame rates and exit
 //   --frames=N          quit after N frames
 //   --fixed_dt[=us]     advance every frame by a constant step (16667 us)
 //   --headless          no window; needs --fixed_dt or --replay
