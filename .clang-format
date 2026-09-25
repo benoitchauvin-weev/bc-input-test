@@ -1,0 +1,155 @@
+# Weev C/C++ clang-format config
+# Matches docs/CODING_STANDARDS_CPP.md: Allman braces, tabs, 80 cols.
+#
+# Install:  brew install clang-format
+# Usage:    clang-format -i path/to/File.cpp
+# Dry run:  clang-format --dry-run -Werror path/to/File.cpp
+# Whole dir: find src -name '*.cpp' -o -name '*.h' -o -name '*.mm' | xargs clang-format -i
+
+Language: Cpp
+Standard: c++20
+
+# --- Indentation ---
+UseTab: Always
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+IndentCaseLabels: false
+IndentPPDirectives: None
+NamespaceIndentation: None
+AccessModifierOffset: -4
+
+# --- Column limit ---
+ColumnLimit: 80
+
+# --- Braces: Allman everywhere ---
+BreakBeforeBraces: Allman
+
+# --- Line breaks ---
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Inline
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+
+# --- Alignment ---
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignConsecutiveMacros: false
+AlignEscapedNewlines: Left
+AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
+
+# --- Arguments / parameters ---
+BinPackArguments: false
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+# --- Spaces ---
+SpaceAfterCStyleCast: false
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyBlock: false
+SpacesInAngles: Never
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceBeforeSquareBrackets: false
+
+# --- Includes ---
+# Manual include ordering (project / external / standard, blank line
+# between groups — see CODING_STANDARDS_CPP.md) is enforced by hand,
+# not by clang-format.
+SortIncludes: false
+IncludeBlocks: Preserve
+
+# --- Penalties (prefer breaking args over other things) ---
+PenaltyBreakAssignment: 25
+PenaltyBreakBeforeFirstCallParameter: 50
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+
+# --- Misc ---
+PointerAlignment: Left
+ReferenceAlignment: Left
+ReflowComments: false
+SortUsingDeclarations: false
+EmptyLineBeforeAccessModifier: LogicalBlock
+EmptyLineAfterAccessModifier: Never
+InsertBraces: false
+RemoveSemicolon: false
+MaxEmptyLinesToKeep: 2
+---
+# Objective-C++ (.mm) — same rules as C++
+Language: ObjC
+BasedOnStyle: ""
+
+UseTab: Always
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+IndentCaseLabels: false
+IndentPPDirectives: None
+NamespaceIndentation: None
+AccessModifierOffset: -4
+
+ColumnLimit: 80
+BreakBeforeBraces: Allman
+
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Inline
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignConsecutiveMacros: false
+AlignEscapedNewlines: Left
+AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
+
+BinPackArguments: false
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+SpaceAfterCStyleCast: false
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyBlock: false
+SpacesInAngles: Never
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceBeforeSquareBrackets: false
+
+SortIncludes: false
+IncludeBlocks: Preserve
+
+PenaltyBreakAssignment: 25
+PenaltyBreakBeforeFirstCallParameter: 50
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+
+PointerAlignment: Left
+ReferenceAlignment: Left
+ReflowComments: false
+SortUsingDeclarations: false
+EmptyLineBeforeAccessModifier: LogicalBlock
+EmptyLineAfterAccessModifier: Never
+InsertBraces: false
+RemoveSemicolon: false
+MaxEmptyLinesToKeep: 2
+...
